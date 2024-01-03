@@ -1,7 +1,7 @@
 {
-    "name": "Instagram Downloader",
-    "description": "Download Photos and Videos from Instagram Post, Reels, TV, Stories",
-    "version": "4.0.1",
+    "name": "Instagram Video Bar",
+    "description": "Add a video progress bar in your instagram videos",
+    "version": "0.0.1",
     "manifest_version": 3,
     "icons": {
         "16": "icons/icon16.png",
@@ -15,20 +15,18 @@
     "action": {
         "default_icon": "icons/icon128.png"
     },
+    "permissions": [
+        "activeTab"
+    ],
     "content_scripts": [
         {
             "matches": [
                 "https://www.instagram.com/*"
             ],
             "js": [
-                "src/js/main.js",
-                "src/js/post.js",
-                "src/js/story.js",
-                "src/libs/jszip.min.js"
+                "src/js/content.js"
             ],
-            "css": [
-                "src/style/style.css"
-            ]
+            "run_at": "document_idle"
         }
     ]
 }
